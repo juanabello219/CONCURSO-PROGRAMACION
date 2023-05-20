@@ -11,21 +11,24 @@ def search_user(data_users):
         #print(valor)
         if valor[0] == cedula:
             system_clear_function()
-            #print("El usuario esta registrado en el sistema.")
-            print("***********INFORMACIÓN DEL USUARIO*************")
-            #print(f"CEDULA""\t\t\tNOMBRE""\t\t\tAPELLIDO""\t\t\tDIRECCION""\t\t\tTELEFONO")
-            print(Template("$cedula $nombre $apellido $direccion $telefono").substitute(cedula = "Cedula", nombre=" Nombres", apellido="Apellidos", direccion="Dirección", telefono="Telefono"))
+            print("="*90)
+            print("                       DATOS DEL USUARIO                       ")
+            gap = ' '*3
+            encabezado = f"{'Cedula':^10s}{gap}{'Nombres y apellidos':^35s}{gap}{'Dirección':^15}{gap}{'Telefono':^10s}"
+            print("="*90)
+            print(encabezado)
+            print("-"*90)
             datos_usuario=row[cedula]
-            print("")
-            #print(Template("$cedula\t$nombre\t$apellido\t$direccion\t$telefono").substitute(cedula=cedula, nombre=datos_usuario["nombre"],apellido=datos_usuario['apellido'], direccion=datos_usuario['direccion'], telefono=datos_usuario['telefono']))
-            print(f"{cedula}{datos_usuario['nombre']:10}{datos_usuario['apellido']:10}{datos_usuario['direccion']:10}{datos_usuario['telefono']:10}")
-            print("")
-            print(f"TARJETAS A CARGO")
-            cards = datos_usuario["tarjetas_a_cargo"]
-            print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = "Codigo", saldo="Saldo", estado="Estado"))
-            for i in cards:
-                print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = i[0], saldo=i[1], estado=i[2]))      
-            print("")
+            #print(datos_usuario)
+            rec = f"{cedula:>10s}{gap}{datos_usuario['nombre']:17s}{datos_usuario['apellido']:18s}{gap}{datos_usuario['direccion']:^15}{gap}{datos_usuario['telefono']:^10}"
+            print(rec)
+
+            # print(f"TARJETAS A CARGO")
+            # cards = datos_usuario["tarjetas_a_cargo"]
+            # print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = "Codigo", saldo="Saldo", estado="Estado"))
+            # for i in cards:
+            #     print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = i[0], saldo=i[1], estado=i[2]))      
+            # print("")
             return True
         else:
             print("El usuario no esta registrado en el sistema.")
