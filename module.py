@@ -56,7 +56,7 @@ def menu():
         print("2.    Comprar tarjeta                        ")
         print("3.    Registro de usuarios                   ")
         print("4.    Reportes generales                     ")
-        print("5.    Activación/inactivación de tarjeta     ")
+        print("5.   inactivación de tarjeta                 ")
         print("6.    Salir del sistema                      ")
         print("                                             ")
         print("============================================ ")
