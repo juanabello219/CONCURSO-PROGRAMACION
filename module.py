@@ -4,7 +4,6 @@ from datetime import datetime
 import random
 import reportes
 
-
 #Datos de prueba para que veas como se va a organizar la estructura.
 datos_usuarios = [{
     "1065875449":{
@@ -45,6 +44,31 @@ recargas = [
 
 codigos_tarjetas = []
 
+
+
+#Juan toca mejorar esto pensando en la estructura que deje como base arriba.
+def compra_tarjetas():
+    usuario={}
+    cedula = input("Ingrese su numero de cedula: ")
+    nombre = input("ingrese su nombre completo: ").capitalize()
+    apellido = input("Ingrese su apellido: ").capitalize()
+    direccion = input("Ingrese su direccion: ").capitalize()
+    telefono = input("Ingrese su numero de telefono: ")
+    while (True):
+        codigo=random.randrange(100000,999999)
+        if codigo in codigos_tarjetas:
+            continue
+        else:
+            codigos_tarjetas.append(codigo)
+            valor_tarjeta = 0
+            estado = True
+            usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
+            valor=usuario[cedula]
+            valor["tarjetas"]=[codigo,valor_tarjeta,estado]
+            datos_usuarios.append(usuario)
+            return f"el proceso fue exitoso"
+
+
 #Menu de opciones
 def menu():
     while (True):
@@ -78,25 +102,3 @@ def menu():
         else:
             print("Ocurrio un error, Intentalo de nuevo.")
             continue
-
-#Juan toca mejorar esto pensando en la estructura que deje como base arriba.
-def compra_tarjetas():
-    usuario={}
-    cedula = input("Ingrese su numero de cedula: ")
-    nombre = input("ingrese su nombre completo: ").capitalize()
-    apellido = input("Ingrese su apellido: ").capitalize()
-    direccion = input("Ingrese su direccion: ").capitalize()
-    telefono = input("Ingrese su numero de telefono: ")
-    while (True):
-        codigo=random.randrange(100000,999999)
-        if codigo in codigos_tarjetas:
-            continue
-        else:
-            codigos_tarjetas.append(codigo)
-            valor_tarjeta = 0
-            estado = True
-            usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
-            valor=usuario[cedula]
-            valor["tarjetas"]=[codigo,valor_tarjeta,estado]
-            datos_usuarios.append(usuario)
-            return f"el proceso fue exitoso"
