@@ -2,5 +2,5 @@ import module
 
 
 if __name__=="__main__":
-    #module.menu()
+    module.menu()
     pass
