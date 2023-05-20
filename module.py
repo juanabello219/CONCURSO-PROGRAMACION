@@ -1,5 +1,6 @@
 from os import system 
 from clear_screen import system_clear_function
+from datetime import datetime
 import random
 
 
@@ -20,6 +21,26 @@ datos_usuarios = [{
         ]
     } 
 }]
+
+#Datos de las recargas
+recargas = [
+    {
+    10001:{
+            "codigo_tarjeta": 890123,
+            "cedula_usuario": "1065875449",
+            "valor_recarga":20000,
+            "fecha":"2023-05-19 20:32:00.556641"
+        }
+    },
+    {
+    10002:{
+            "codigo_tarjeta": 890123,
+            "cedula_usuario": "1065875449",
+            "valor_recarga":5000,
+            "fecha":"2023-05-19 20:40:00.556641"
+        }
+    }
+]
 
 #Menu de opciones
 def menu():
