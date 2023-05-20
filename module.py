@@ -42,6 +42,8 @@ recargas = [
     }
 ]
 
+codigos_tarjetas = []
+
 #Menu de opciones
 def menu():
     while (True):
@@ -65,8 +67,7 @@ def menu():
         if (opcion==1):
             pass
         elif (opcion==2):
-            #compra_tarjetas()
-            pass
+            compra_tarjetas()
         elif (opcion ==3):
             pass
         elif(opcion==4):
@@ -78,27 +79,22 @@ def menu():
 
 #Juan toca mejorar esto pensando en la estructura que deje como base arriba.
 def compra_tarjetas():
-    # cedula = input("por favor ingrese su cedula: ")
-    # nombre = input("por favor ingrese su nombre:  ")
-    # direccion = input("por favor ingrese su direccion: ")
-    # telefono = input("por favor ingrese su numero de telefono: ")
-    # valor_tarjeta= 0
-    # opcion = input("deseas recargar tu tarjeta (si/no):")
-    # if opcion == "si":
-    #     recarga=int(input("ingresa el valor de la recarga: "))
-    #     valor_tarjeta = recarga
-    # elif opcion == "no":
-    #     print("saliendo del sistema... ")
-    #     quit()
-    # for _ in range(1,6):
-    #     cod_tarjeta= random.randrange(1000000,9000000)
-    #     if cod_tarjeta in tarjetas:
-    #         cod_tarjeta= random.randrange(1000000,9000000)
-    #         tarjetas["cedula"]=cedula
-    #         tarjetas["nombre"]=nombre
-    #         tarjetas["direccion"]=direccion
-    #         tarjetas["telefono"]=telefono
-    #         tarjetas["cod_tarjeta"]=cod_tarjeta
-    #         tarjetas["saldo_tarjeta"]= valor_tarjeta
-    #         print(tarjetas)
-    pass
+    usuario={}
+    cedula = input("Ingrese su numero de cedula: ")
+    nombre = input("ingrese su nombre completo: ").capitalize()
+    apellido = input("Ingrese su apellido: ").capitalize()
+    direccion = input("Ingrese su direccion: ").capitalize()
+    telefono = input("Ingrese su numero de telefono: ")
+    while (True):
+        codigo=random.randrange(1000000,9000000)
+        if codigo in codigos_tarjetas:
+            continue
+        else:
+            valor_tarjeta = 0
+            estado = True
+            usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
+            valor=usuario[cedula]
+            valor["tarjetas"]=[codigo,valor_tarjeta,estado]
+            datos_usuarios.append(usuario)
+            break
+    print(datos_usuarios)
