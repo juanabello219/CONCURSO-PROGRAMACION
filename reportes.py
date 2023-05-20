@@ -15,7 +15,7 @@ datos_usuarios = [{
         ]
     } 
 },
-                  {
+                {
     "1065875448":{
         "nombre":"Didier Fernando",
         "apellido":"Guerrero Sumalave", 
@@ -31,9 +31,9 @@ datos_usuarios = [{
         ]
     } 
 }
-                  
-                  
-                  ]
+                
+                
+                ]
 
 #Datos de las recargas
 recargas = [
