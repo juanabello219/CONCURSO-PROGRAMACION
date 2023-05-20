@@ -3,7 +3,7 @@ from clear_screen import clear_screen
 import random
 
 
-
+#Datos de prueba para que veas como se va a organizar la estructura.
 datos_usuarios = [{
     "1065875449":{
         "nombre":"Didier Fernando",
@@ -21,7 +21,7 @@ datos_usuarios = [{
     } 
 }]
 
-
+#Menu de opciones
 def menu():
     while (True):
         print("============================================ ")
@@ -55,6 +55,7 @@ def menu():
             print("Ocurrio un error, Intentalo de nuevo.")
             continue
 
+#Juan toca mejorar esto pensando en la estructura que deje como base arriba.
 def compra_tarjetas():
     # cedula = input("por favor ingrese su cedula: ")
     # nombre = input("por favor ingrese su nombre:  ")
