@@ -95,9 +95,9 @@ def inactivar_tarjetas(datos_usuarios):
             print("                       DATOS DE LAS TARJETAS                       ")
             gap = ' '*3
             encabezado = f"{'Codigo':^6s}{gap}{'Saldo':^10s}{gap}{'Estado':^10}"
-            print("="*32)
+            print("="*90)
             print(encabezado)
-            print("-"*32)
+            print("-"*90)
             for i in tarjetas:
                 rec = f"{i[0]:<6d}{gap}{i[1]:10d}{gap}{i[2]:>10s}"
                 print(rec)
