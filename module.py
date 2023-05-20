@@ -2,7 +2,25 @@ from os import system
 from clear_screen import clear_screen
 import random
 
-datos_usuarios = []
+
+
+datos_usuarios = [{
+    "1065875449":{
+        "nombre":"Didier Fernando",
+        "apellido":"Guerrero Sumalave", 
+        "direccion":"Carrera 37 número 2 Norte 29", 
+        "telefono":"3208777146", 
+        "tarjetas_a_cargo":[
+            [
+                890123,0,True
+            ],
+            [
+                123890,10000,False
+            ]
+        ]
+    } 
+}]
+
 
 def menu():
     while (True):
