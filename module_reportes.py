@@ -22,7 +22,6 @@ def search_user(data_users):
             #print(datos_usuario)
             rec = f"{cedula:>10s}{gap}{datos_usuario['nombre']:17s}{datos_usuario['apellido']:18s}{gap}{datos_usuario['direccion']:^15}{gap}{datos_usuario['telefono']:^10}"
             print(rec)
-
             # print(f"TARJETAS A CARGO")
             # cards = datos_usuario["tarjetas_a_cargo"]
             # print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = "Codigo", saldo="Saldo", estado="Estado"))
