@@ -1,5 +1,5 @@
 from clear_screen import system_clear_function
-
+from string import Template
 
 #Funciones para manejar los reportes
 
@@ -11,18 +11,20 @@ def search_user(data_users):
         #print(valor)
         if valor[0] == cedula:
             system_clear_function()
-            print("El usuario esta registrado en el sistema.")
-            print("\t INFORMACIÓN DEL USUARIO ")
-            print(f"CEDULA""\t\t\tNOMBRE""\t\t\tAPELLIDO""\t\t\tDIRECCION""\t\t\tTELEFONO")
+            #print("El usuario esta registrado en el sistema.")
+            print("***********INFORMACIÓN DEL USUARIO*************")
+            #print(f"CEDULA""\t\t\tNOMBRE""\t\t\tAPELLIDO""\t\t\tDIRECCION""\t\t\tTELEFONO")
+            print(Template("$cedula $nombre $apellido $direccion $telefono").substitute(cedula = "Cedula", nombre=" Nombres", apellido="Apellidos", direccion="Dirección", telefono="Telefono"))
             datos_usuario=row[cedula]
             print("")
-            print(f"{cedula} \t{datos_usuario['nombre']}\t{datos_usuario['apellido']}\t{datos_usuario['direccion']}\t{datos_usuario['telefono']}")
+            #print(Template("$cedula\t$nombre\t$apellido\t$direccion\t$telefono").substitute(cedula=cedula, nombre=datos_usuario["nombre"],apellido=datos_usuario['apellido'], direccion=datos_usuario['direccion'], telefono=datos_usuario['telefono']))
+            print(f"{cedula}{datos_usuario['nombre']:10}{datos_usuario['apellido']:10}{datos_usuario['direccion']:10}{datos_usuario['telefono']:10}")
             print("")
             print(f"TARJETAS A CARGO")
             cards = datos_usuario["tarjetas_a_cargo"]
-            print(f"CODIGO      SALDO       ESTADO")
+            print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = "Codigo", saldo="Saldo", estado="Estado"))
             for i in cards:
-                print(f"{i[0]}      {i[1]}      {i[2]}")
+                print(Template("$codigo"     "$saldo"     "$estado").substitute(codigo = i[0], saldo=i[1], estado=i[2]))      
             print("")
             return True
         else:
