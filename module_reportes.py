@@ -48,3 +48,22 @@ def search_reload_date(data):
     pass
 
 #Revisar formatos de salida con cadenas para mejor la salida.
+# lista = [{"cedula":"1065875449","nombre":"Didier Guerrero","direccion":"calle 5 N 10-12","telefono":"3208777146"},
+#          {"cedula":"18925019","nombre":"Juan Abello","direccion":"calle 5 N 10-12","telefono":"3208777146"},
+#          {"cedula":"9150234","nombre":"Lorena Beltran Castro","direccion":"calle 5 N 10-12","telefono":"3208777146"},
+#          {"cedula":"1001890234","nombre":"Nicolas Bohorquez","direccion":"calle 5 N 10-12","telefono":"3208777146"},
+#          ]
+
+# gap = ' '*3
+# encabezado = f"{'Cedula':^10s}{gap}{'Nombre':^25s}{gap}{'Dirección':^15s}{gap}{'Telefono':^10s}"
+
+# print("="*70)
+# print(encabezado)
+# print("-"*70)
+
+
+# for i in lista: 
+#     #print(i)
+#     #print(f"{i['cedula']}")
+#     rec = f"{i['cedula']:>10s}{gap}{i['nombre']:25s}{gap}{i['direccion']:15}{gap}{i['telefono']:10}"
+#     print(rec)
