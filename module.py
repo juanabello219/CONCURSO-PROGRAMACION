@@ -85,9 +85,9 @@ def inactivar_tarjetas(datos_usuarios):
     cedula = input("Ingrese el numero de su cedula: ")
     for row in datos_usuarios:
         #print(row)
-        valor = list(row.keys())
-        print(valor)
-        if valor[0] == cedula:
+        #valor = list(row.keys())
+        valor = row.get(cedula)
+        if valor != None:
             datos_usuario=row[cedula]
             print(f"{datos_usuario['nombre']} {datos_usuario['apellido']}")
             tarjetas=datos_usuario["tarjetas"]
@@ -105,10 +105,10 @@ def inactivar_tarjetas(datos_usuarios):
             for i in tarjetas:
                 if cod_tarjeta ==i[0]:
                     pos=tarjetas.index(i)
-                    confirmacion=input("Confirma inactivación de tarjeta: ").lower()
+                    confirmacion=input("Confirma inactivación de tarjeta [si/no]: ").lower()
                     if confirmacion=="si":
                         tarjetas.pop(pos)
-                        print(tarjetas)
+                        #print(tarjetas)
                         temp=[i[0],i[1],"Inactiva"]
                         tarjetas.append(temp)
                         datos_usuario["tarjetas"]=tarjetas
@@ -117,7 +117,6 @@ def inactivar_tarjetas(datos_usuarios):
                         return 
         else:
             print("Este usuario no esta registrado en el sistema.")
-
 
 #Juan toca mejorar esto pensando en la estructura que deje como base arriba.
 def compra_tarjetas():
@@ -134,13 +133,13 @@ def compra_tarjetas():
         else:
             codigos_tarjetas.append(codigo)
             valor_tarjeta = 0
-            estado = True
+            estado = "Activa"
             usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
             valor=usuario[cedula]
-            valor["tarjetas"]=[codigo,valor_tarjeta,estado]
+            x = [codigo, valor_tarjeta, estado]
+            valor["tarjetas"]=[x]
             datos_usuarios.append(usuario)
             return f"el proceso fue exitoso"
-
 
 #Menu de opciones
 def menu():
