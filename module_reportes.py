@@ -1,6 +1,7 @@
 from clear_screen import system_clear_function
 from string import Template
 
+
 #Funciones para manejar los reportes
 
 #Consultas por usuario
@@ -8,7 +9,7 @@ def search_user(data_users):
     cedula = input("Ingrese la cedula a consultar: ")
     for row in data_users:
         valor = list(row.keys())
-        #print(valor)
+        print(valor)
         if valor[0] == cedula:
             system_clear_function()
             print("="*90)
@@ -30,8 +31,8 @@ def search_user(data_users):
             # print("")
             return True
         else:
-            print("El usuario no esta registrado en el sistema.")
-            return False
+            continue
+    
 
 #Consultas por tarjeta
 def search_card(data):
