@@ -3,7 +3,7 @@ datos_usuarios = [{
     "1065875449":{
         "nombre":"Didier Fernando",
         "apellido":"Guerrero Sumalave", 
-        "direccion":"Carrera 37 número 2 Norte 29", 
+        "direccion":"Cra 37 # 2N29", 
         "telefono":"3208777146", 
         "tarjetas_a_cargo":[
             [
@@ -19,7 +19,7 @@ datos_usuarios = [{
     "1065875448":{
         "nombre":"Didier Fernando",
         "apellido":"Guerrero Sumalave", 
-        "direccion":"Carrera 37 número 2 Norte 29", 
+        "direccion":"Cra 37 # 2N29", 
         "telefono":"3208777146", 
         "tarjetas_a_cargo":[
             [
@@ -75,8 +75,8 @@ def menu_reportes():
         print("============================================ ")
         opcion = int(input("Ingrese la opción que deseas utilizar: "))
         if opcion == 1:
-            valor = module_reportes.search_user(datos_usuarios)
-            print(valor)
+            module_reportes.search_user(datos_usuarios)
+
         elif opcion == 2:
             pass
         elif opcion == 3:
