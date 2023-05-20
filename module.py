@@ -1,5 +1,5 @@
 from os import system 
-from clear_screen import clear_screen
+from clear_screen import system_clear_function
 import random
 
 
@@ -38,7 +38,7 @@ def menu():
         print("============================================ ")
         opcion = int(input("Ingrese la opción que deseas utilizar: "))
         if (opcion>4):
-            clear_screen()
+            system_clear_function()
             print("La opción no se encuentra, intentalo de nuevo.")
             continue
         if (opcion==1):
