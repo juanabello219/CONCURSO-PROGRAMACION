@@ -46,3 +46,5 @@ def search_cards_inactives(data):
 #Consultas por fechas
 def search_reload_date(data):
     pass
+
+#Revisar formatos de salida con cadenas para mejor la salida.
