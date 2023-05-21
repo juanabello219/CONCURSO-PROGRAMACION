@@ -55,6 +55,7 @@
 
 import module_reportes
 from clear_screen import system_clear_function
+import module
 #from module import datos_usuarios
 
 #Menu para realizar las consultas
@@ -69,7 +70,8 @@ def menu_reportes(datos_usuarios):
         print("3.    Consultar tarjetas activas             ")
         print("4.    Consultar tarjetas inactivas           ")
         print("5.    Consultar recargas por fecha           ")
-        print("6.    Salir de los reportes                  ")
+        print("6.    Consultar registro por compra")
+        print("7.    Salir de los reportes                  ")
         print("                                             ")
         print("============================================ ")
         opcion = int(input("Ingrese la opción que deseas utilizar: "))
@@ -85,7 +87,9 @@ def menu_reportes(datos_usuarios):
         elif opcion == 5:
             pass
         elif opcion == 6:
-            return 
+            module.crear_csv() 
+        elif opcion == 7:
+            return
         else:
             print("La opción no es valida, intentelo de nuevo.")
             continue

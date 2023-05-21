@@ -4,6 +4,7 @@ from datetime import datetime
 import random
 import reportes
 from module_reportes import search_user
+import csv
 
 #Datos de prueba para que veas como se va a organizar la estructura.
 datos_usuarios = [{
@@ -157,6 +158,12 @@ def search_user(datos_usuarios, cedula):
             continue
     return False
 
+def adicion_tarjetas(datos_usuarios,cedula):
+    pass
+
+def crear_csv():
+    file = open("Registro_compra.csv","w",encoding="UTF-8")
+    print(file)
 
 #Menu de opciones
 def menu():
@@ -167,7 +174,7 @@ def menu():
         print("                                             ")
         print("1.    Recarga de tarjetas                    ")
         print("2.    Comprar tarjeta                        ")
-        print("3.    Registro de usuarios                   ")
+        print("3.    Tarjetas adicionales                   ")
         print("4.    Reportes generales                     ")
         print("5.    Inactivación de tarjeta                ")
         print("6.    Salir del sistema                      ")
