@@ -3,6 +3,7 @@ from clear_screen import system_clear_function
 from datetime import datetime
 import random
 import reportes
+from module_reportes import search_user
 
 #Datos de prueba para que veas como se va a organizar la estructura.
 datos_usuarios = [{
@@ -140,6 +141,7 @@ def compra_tarjetas():
             valor["tarjetas"]=[x]
             datos_usuarios.append(usuario)
             return f"el proceso fue exitoso"
+
 
 #Menu de opciones
 def menu():

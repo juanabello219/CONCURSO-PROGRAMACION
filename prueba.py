@@ -4,7 +4,6 @@ def search_user(data_users):
         valor = list(row.keys())
         #print(valor)
         if valor[0] == cedula:
-            system_clear_function()
             print("="*90)
             print("                       DATOS DEL USUARIO                       ")
             gap = ' '*3
