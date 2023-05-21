@@ -49,7 +49,7 @@ def recargas_tarjetas(datos_usuarios):
     for row in datos_usuarios:
         #print(row)
         valor = list(row.keys())
-        print(valor)
+        #print(valor)
         if valor[0] == cedula:
             datos_usuario=row[cedula]
             print(f"{datos_usuario['nombre']} {datos_usuario['apellido']}")
@@ -112,9 +112,9 @@ def inactivar_tarjetas(datos_usuarios):
                         temp=[i[0],i[1],"Inactiva"]
                         tarjetas.append(temp)
                         datos_usuario["tarjetas"]=tarjetas
-                        print(datos_usuario)
-                        print(datos_usuarios)
-                        return 
+                        #print(datos_usuario)
+                        #print(datos_usuarios)
+                        
         else:
             print("Este usuario no esta registrado en el sistema.")
 
@@ -122,24 +122,39 @@ def inactivar_tarjetas(datos_usuarios):
 def compra_tarjetas():
     usuario={}
     cedula = input("Ingrese su numero de cedula: ")
-    nombre = input("ingrese su nombre completo: ").capitalize()
-    apellido = input("Ingrese su apellido: ").capitalize()
-    direccion = input("Ingrese su direccion: ").capitalize()
-    telefono = input("Ingrese su numero de telefono: ")
-    while (True):
-        codigo=random.randrange(100000,999999)
-        if codigo in codigos_tarjetas:
-            continue
+    valor = search_user(datos_usuarios, cedula)
+    if valor:
+        print("El usuario ya se encuentra registrado, buscalo en los reportes.")
+    else:
+        nombre = input("ingrese su nombre completo: ").capitalize()
+        apellido = input("Ingrese su apellido: ").capitalize()
+        direccion = input("Ingrese su direccion: ").capitalize()
+        telefono = input("Ingrese su numero de telefono: ")
+        while (True):
+            codigo=random.randrange(100000,999999)
+            if codigo in codigos_tarjetas:
+                continue
+            else:
+                codigos_tarjetas.append(codigo)
+                valor_tarjeta = 0
+                estado = "Activa"
+                usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
+                valor=usuario[cedula]
+                x = [codigo, valor_tarjeta, estado]
+                valor["tarjetas"]=[x]
+                datos_usuarios.append(usuario)
+                return f"El proceso fue exitoso"
+
+def search_user(datos_usuarios, cedula):
+    for row in datos_usuarios:
+        #print(row)
+        valor = list(row.keys())
+        #print(valor)
+        if valor[0] == cedula:
+            return True
         else:
-            codigos_tarjetas.append(codigo)
-            valor_tarjeta = 0
-            estado = "Activa"
-            usuario[cedula]={"nombre":nombre,"apellido":apellido,"direccion":direccion,"telefono":telefono,"tarjetas":[]}
-            valor=usuario[cedula]
-            x = [codigo, valor_tarjeta, estado]
-            valor["tarjetas"]=[x]
-            datos_usuarios.append(usuario)
-            return f"el proceso fue exitoso"
+            continue
+    return False
 
 #Menu de opciones
 def menu():
@@ -166,7 +181,7 @@ def menu():
         elif (opcion==2):
             valor=compra_tarjetas()
             print(valor)
-            print(datos_usuarios)
+           #print(datos_usuarios)
         elif (opcion ==3):
             pass
         elif(opcion==4):
