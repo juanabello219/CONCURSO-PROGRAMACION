@@ -1,9 +1,10 @@
-def search_user(data_users):
-    cedula = input("Ingrese la cedula a consultar: ")
-    for row in data_users:
+def search_user(datos_usuarios, cedula):
+    for row in datos_usuarios:
+        #print(row)
         valor = list(row.keys())
-        #print(valor)
+        print(valor)
         if valor[0] == cedula:
+            system_clear_function()
             print("="*90)
             print("                       DATOS DEL USUARIO                       ")
             gap = ' '*3
