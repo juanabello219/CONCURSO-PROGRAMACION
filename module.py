@@ -86,8 +86,6 @@ def recargas_tarjetas(datos_usuarios):
 def inactivar_tarjetas(datos_usuarios):
     cedula = input("Ingrese el numero de su cedula: ")
     for row in datos_usuarios:
-        #print(row)
-        #valor = list(row.keys())
         valor = row.get(cedula)
         if valor != None:
             datos_usuario=row[cedula]
