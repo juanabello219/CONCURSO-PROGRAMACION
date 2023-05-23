@@ -157,8 +157,6 @@ def search_user(datos_usuarios, cedula):
             continue
     return False
 
-def adicion_tarjetas(datos_usuarios,cedula):
-    pass
 
 def crear_csv():
     file = open("Registro_compra.csv","w",encoding="UTF-8")

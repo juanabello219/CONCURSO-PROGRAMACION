@@ -1,4 +1,6 @@
-import platform, os
+import platform
+import os
+
 
 def system_clear_function():
     system_os = platform.system()
