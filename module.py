@@ -5,7 +5,6 @@ import random
 import reportes
 from module_reportes import search_user
 import module_archivos
-import csv
 
 #Datos de prueba para que veas como se va a organizar la estructura.
 datos_usuarios = [{
@@ -205,6 +204,7 @@ def menu():
             elif (opcion ==3):
                 pass
             elif(opcion==4):
+                system_clear_function()
                 reportes.menu_reportes(datos_usuarios)
             elif (opcion==5):
                 inactivar_tarjetas(datos_usuarios)

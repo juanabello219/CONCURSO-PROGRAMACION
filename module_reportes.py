@@ -6,6 +6,7 @@ from string import Template
 
 #Consultas por usuario
 def search_user(data_users):
+    system_clear_function()
     cedula = input("Ingrese la cedula a consultar: ")
     for row in data_users:
         valor = list(row.keys())   
@@ -22,17 +23,9 @@ def search_user(data_users):
             #print(datos_usuario)
             rec = f"{cedula:>10s}{gap}{datos_usuario['nombre']:17s}{datos_usuario['apellido']:18s}{gap}{datos_usuario['direccion']:^15}{gap}{datos_usuario['telefono']:^10}"
             print(rec)
-            # system_clear_function()
-            # print("="*90)
-            # print("                       DATOS DE LAS TARJETAS                        ")
-            # gap = ' '*3
-            # encabezado = f"{'Codigo':^6s}{gap}{'Saldo':^10s}{gap}{'Estado':^15s}"
-            # print("="*90)
-            # print(encabezado)
-            # print("-"*90)
-            # datos_usuario=row[cedula]
-            # rec = f"{datos_usuario['cod_tarjeta']:>10s}{gap}{datos_usuario['valor_tarjeta']:17s}{datos_usuario['Estado']:18s}"
-            # print(rec)
+
+            retorno=input("\nPresione enter para continuar") 
+            system_clear_function()   
             return True
         else:
             continue
