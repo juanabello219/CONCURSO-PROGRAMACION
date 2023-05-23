@@ -157,10 +157,6 @@ def search_user(datos_usuarios, cedula):
     return False
 
 
-def crear_csv():
-    file = open("Registro_compra.csv","w",encoding="UTF-8")
-    print(file)
-
 #Menu de opciones
 def menu():
     try:
