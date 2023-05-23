@@ -1,10 +1,10 @@
-#Programación de reportes
+# Programación de reportes
 # #datos_usuarios = [{
 #     "1065875449":{
 #         "nombre":"Didier Fernando",
-#         "apellido":"Guerrero Sumalave", 
-#         "direccion":"Cra 37 # 2N29", 
-#         "telefono":"3208777146", 
+#         "apellido":"Guerrero Sumalave",
+#         "direccion":"Cra 37 # 2N29",
+#         "telefono":"3208777146",
 #         "tarjetas_a_cargo":[
 #             [
 #                 890123,0,True
@@ -13,14 +13,14 @@
 #                 123890,10000,False
 #             ]
 #         ]
-#     } 
+#     }
 # },
 #                 {
 #     "1065875448":{
 #         "nombre":"Didier Fernando",
-#         "apellido":"Guerrero Sumalave", 
-#         "direccion":"Cra 37 # 2N29", 
-#         "telefono":"3208777146", 
+#         "apellido":"Guerrero Sumalave",
+#         "direccion":"Cra 37 # 2N29",
+#         "telefono":"3208777146",
 #         "tarjetas_a_cargo":[
 #             [
 #                 890123,0,True
@@ -29,7 +29,7 @@
 #                 123890,10000,False
 #             ]
 #         ]
-#     } 
+#     }
 # }
 #                 ]
 
@@ -56,9 +56,11 @@
 import module_reportes
 from clear_screen import system_clear_function
 import module
-#from module import datos_usuarios
+# from module import datos_usuarios
 
-#Menu para realizar las consultas
+# Menu para realizar las consultas
+
+
 def menu_reportes(datos_usuarios):
     while (True):
         print("============================================ ")
@@ -87,7 +89,7 @@ def menu_reportes(datos_usuarios):
         elif opcion == 5:
             pass
         elif opcion == 6:
-            module.crear_csv() 
+            module.crear_csv()
         elif opcion == 7:
             return
         else:
