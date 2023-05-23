@@ -44,7 +44,7 @@ recargas = [
     }
 ]
 
-codigos_tarjetas = []
+codigos_tarjetas = [890123,123890]
 
 def recargas_tarjetas(datos_usuarios):
     cedula = input("Ingrese el numero de su cedula: ")
@@ -56,7 +56,7 @@ def recargas_tarjetas(datos_usuarios):
             datos_usuario=row[cedula]
             print(f"{datos_usuario['nombre']} {datos_usuario['apellido']}")
             tarjetas=datos_usuario["tarjetas"]
-            print("="*90)
+            print("="*32)
             print("                       DATOS DE LAS TARJETAS                       ")
             gap = ' '*3
             encabezado = f"{'Codigo':^6s}{gap}{'Saldo':^10s}{gap}{'Estado':^10}"
@@ -86,8 +86,6 @@ def recargas_tarjetas(datos_usuarios):
 def inactivar_tarjetas(datos_usuarios):
     cedula = input("Ingrese el numero de su cedula: ")
     for row in datos_usuarios:
-        #print(row)
-        #valor = list(row.keys())
         valor = row.get(cedula)
         if valor != None:
             datos_usuario=row[cedula]
