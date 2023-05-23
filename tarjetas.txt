@@ -1,0 +1,1 @@
+cedula_usuario,nombre_usuario,codigo_tarjeta

@@ -4,6 +4,7 @@ from datetime import datetime
 import random
 import reportes
 from module_reportes import search_user
+import module_archivos
 import csv
 
 #Datos de prueba para que veas como se va a organizar la estructura.
@@ -165,36 +166,50 @@ def crear_csv():
 
 #Menu de opciones
 def menu():
-    while (True):
-        print("============================================ ")
-        print("*****SYSTEM E-CARD AGUACHICA****             ")
-        print("============================================ ")
-        print("                                             ")
-        print("1.    Recarga de tarjetas                    ")
-        print("2.    Comprar tarjeta                        ")
-        print("3.    Tarjetas adicionales                   ")
-        print("4.    Reportes generales                     ")
-        print("5.    Inactivación de tarjeta                ")
-        print("6.    Salir del sistema                      ")
-        print("                                             ")
-        print("============================================ ")
-        opcion = int(input("Ingrese la opción que deseas utilizar: "))
-        if (opcion>6):
-            system_clear_function()
-            print("La opción no se encuentra, intentalo de nuevo.")
-            continue
-        if (opcion==1):
-            recargas_tarjetas(datos_usuarios)
-        elif (opcion==2):
-            valor=compra_tarjetas()
-            print(valor)
-           #print(datos_usuarios)
-        elif (opcion ==3):
-            pass
-        elif(opcion==4):
-            reportes.menu_reportes(datos_usuarios)
-        elif (opcion==5):
-            inactivar_tarjetas(datos_usuarios)
-        else:
-            print("Ocurrio un error, Intentalo de nuevo.")
-            continue
+    try:
+        valor = module_archivos.validar_existencia()
+    except OSError as e:
+        print(f"Ocurrio un error, {e}")
+
+    try:
+        if not valor:
+            module_archivos.crear_archivo_usuarios()
+            module_archivos.crear_archivo_recargas()
+            module_archivos.crear_archivo_tarjetas()
+            menu()
+    except OSError as e:
+        print(f"Ocurrio un error {e}")
+    else:
+        while (True):
+            print("============================================ ")
+            print("*****SYSTEM E-CARD AGUACHICA****             ")
+            print("============================================ ")
+            print("                                             ")
+            print("1.    Recarga de tarjetas                    ")
+            print("2.    Comprar tarjeta                        ")
+            print("3.    Tarjetas adicionales                   ")
+            print("4.    Reportes generales                     ")
+            print("5.    Inactivación de tarjeta                ")
+            print("6.    Salir del sistema                      ")
+            print("                                             ")
+            print("============================================ ")
+            opcion = int(input("Ingrese la opción que deseas utilizar: "))
+            if (opcion>6):
+                system_clear_function()
+                print("La opción no se encuentra, intentalo de nuevo.")
+                continue
+            if (opcion==1):
+                recargas_tarjetas(datos_usuarios)
+            elif (opcion==2):
+                valor=compra_tarjetas()
+                print(valor)
+            #print(datos_usuarios)
+            elif (opcion ==3):
+                pass
+            elif(opcion==4):
+                reportes.menu_reportes(datos_usuarios)
+            elif (opcion==5):
+                inactivar_tarjetas(datos_usuarios)
+            else:
+                print("Ocurrio un error, Intentalo de nuevo.")
+                continue

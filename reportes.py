@@ -76,7 +76,7 @@ def menu_reportes(datos_usuarios):
         print("============================================ ")
         opcion = int(input("Ingrese la opción que deseas utilizar: "))
         if opcion == 1:
-            print(datos_usuarios)
+            #print(datos_usuarios)
             module_reportes.search_user(datos_usuarios)
         elif opcion == 2:
             pass
@@ -87,7 +87,7 @@ def menu_reportes(datos_usuarios):
         elif opcion == 5:
             pass
         elif opcion == 6:
-            module.crear_csv() 
+            pass
         elif opcion == 7:
             return
         else:
