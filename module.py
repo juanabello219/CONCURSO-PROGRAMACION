@@ -80,7 +80,6 @@ def recargas_tarjetas(datos_usuarios):
                     tarjetas.append(temp)
                     datos_usuario["tarjetas"]=tarjetas
                     print(datos_usuario)
-                    print(datos_usuarios)
                     return 
 
 def inactivar_tarjetas(datos_usuarios):
