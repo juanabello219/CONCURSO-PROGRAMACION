@@ -1,7 +1,6 @@
 from clear_screen import system_clear_function
 from string import Template
 
-
 #Funciones para manejar los reportes
 
 #Consultas por usuario
