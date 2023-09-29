@@ -203,6 +203,8 @@ def menu():
                 reportes.menu_reportes(datos_usuarios)
             elif (opcion==5):
                 inactivar_tarjetas(datos_usuarios)
+            elif(opcion==6):
+                exit()
             else:
                 print("Ocurrio un error, Intentalo de nuevo.")
                 continue
